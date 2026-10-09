@@ -1,0 +1,21 @@
+# Gradle / Android Studio
+.gradle/
+local.properties
+*.iml
+.idea/
+app/build/
+build/
+
+# Signing keystores (never commit release keys)
+*.jks
+*.keystore
+
+# APKs / AABs (distributed via GitHub Releases, not the repo)
+*.apk
+*.aab
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~

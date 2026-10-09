@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InstaLock</string>
+    <string name="a11y_desc">InstaLock uses Accessibility only to detect when Instagram (app or instagram.com) is opened during a focus timer you started, and to stop the timer from being bypassed. No data is collected or sent anywhere.</string>
+</resources>

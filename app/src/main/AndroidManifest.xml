@@ -28,7 +28,6 @@
             android:taskAffinity=""
             android:theme="@android:style/Theme.Material.NoActionBar" />
 
-        <!-- Detects Instagram, instagram.com and attempts to bypass the lock -->
         <service
             android:name=".BlockerService"
             android:exported="true"
@@ -41,7 +40,6 @@
                 android:resource="@xml/accessibility_config" />
         </service>
 
-        <!-- Device admin: makes uninstalling require extra steps -->
         <receiver
             android:name=".AdminReceiver"
             android:exported="true"
@@ -54,7 +52,6 @@
             </intent-filter>
         </receiver>
 
-        <!-- Boot + clock-change protection -->
         <receiver
             android:name=".SystemReceiver"
             android:exported="true">

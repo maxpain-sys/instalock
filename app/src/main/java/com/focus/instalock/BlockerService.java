@@ -11,13 +11,6 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
 
-/**
- * While a timer is active:
- *  - closes the Instagram app,
- *  - closes instagram.com in browsers,
- *  - closes system screens that show InstaLock (app info, uninstall,
- *    accessibility, device admin) so the lock can't be bypassed.
- */
 public class BlockerService extends AccessibilityService {
 
     private static final Set<String> INSTAGRAM = new HashSet<>(Arrays.asList(
@@ -132,7 +125,6 @@ public class BlockerService extends AccessibilityService {
         try {
             startActivity(i);
         } catch (Exception ignored) {
-            // Home action already removed the blocked screen.
         }
     }
 

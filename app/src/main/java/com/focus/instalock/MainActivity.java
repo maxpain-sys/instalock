@@ -110,8 +110,6 @@ public class MainActivity extends Activity {
     @Override protected void onResume() { super.onResume(); handler.post(tick); }
     @Override protected void onPause() { super.onPause(); handler.removeCallbacks(tick); }
 
-    // ------------------------------------------------------------------ layout
-
     private View header() {
         LinearLayout row = new LinearLayout(this);
         row.setGravity(Gravity.CENTER_VERTICAL);
@@ -272,8 +270,6 @@ public class MainActivity extends Activity {
         return pill;
     }
 
-    // ------------------------------------------------------------------ state
-
     private void refresh() {
         boolean locked = LockState.isLocked(this);
         unlockedView.setVisibility(locked ? View.GONE : View.VISIBLE);
@@ -333,7 +329,6 @@ public class MainActivity extends Activity {
         statusText.setText(text);
     }
 
-    /** 0 = action needed, 1 = done, 2 = optional/unknown. */
     private void setPill(TextView p, int state) {
         if (state == 1) {
             p.setText("On");
@@ -357,8 +352,6 @@ public class MainActivity extends Activity {
         }
         openConsent(selected);
     }
-
-    // ------------------------------------------------------------------ sheets
 
     private Dialog sheet(LinearLayout body) {
         LinearLayout wrap = vertical();
@@ -543,8 +536,6 @@ public class MainActivity extends Activity {
         return col;
     }
 
-    // ------------------------------------------------------------------ permissions
-
     private boolean isAccessibilityOn() {
         String enabled = Settings.Secure.getString(getContentResolver(), Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES);
         if (enabled == null) return false;
@@ -608,14 +599,11 @@ public class MainActivity extends Activity {
                 toast("Find InstaLock and turn Autostart on");
                 return;
             } catch (Exception ignored) {
-                // Not this manufacturer.
             }
         }
         toast("No Autostart page on this phone \u2014 set Battery to Unrestricted instead");
         openAppInfo();
     }
-
-    // ------------------------------------------------------------------ helpers
 
     private int dp(float v) { return Ui.dp(this, v); }
 

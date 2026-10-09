@@ -6,7 +6,6 @@ import android.os.SystemClock;
 
 import java.util.Locale;
 
-/** Stores the lock end time and protects it against clock changes. */
 public final class LockState {
     private static final String PREFS = "lock";
     private static final String KEY_UNTIL = "until";
@@ -42,7 +41,6 @@ public final class LockState {
         return prefs(c).getLong(KEY_START, 0);
     }
 
-    /** Elapsed fraction of the current block, 0..1. */
     public static float progress(Context c) {
         long start = startTime(c), until = until(c);
         if (until <= start) return 1f;
@@ -50,7 +48,6 @@ public final class LockState {
         return Math.max(0f, Math.min(1f, p));
     }
 
-    /** Remembers the pairing of wall-clock time and the monotonic clock. */
     public static void anchor(Context c) {
         prefs(c).edit()
                 .putLong(KEY_ANCHOR_WALL, System.currentTimeMillis())
@@ -58,10 +55,6 @@ public final class LockState {
                 .commit();
     }
 
-    /**
-     * Called when the system clock is changed. If a lock is active, the end time is
-     * shifted by the same amount so moving the clock forward can't end the lock early.
-     */
     public static void onClockChanged(Context c) {
         SharedPreferences sp = prefs(c);
         long until = sp.getLong(KEY_UNTIL, 0);

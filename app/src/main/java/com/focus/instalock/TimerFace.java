@@ -6,7 +6,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/** Ring + remaining time in the middle. Shared by the main and blocked screens. */
 public class TimerFace extends FrameLayout {
     private final RingView ring;
     private final TextView time;

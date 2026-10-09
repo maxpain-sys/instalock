@@ -13,7 +13,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-/** Press-and-hold button: the fill grows while held and fires when full. */
 public class HoldButton extends View {
     private static final long HOLD_MS = 1600;
 

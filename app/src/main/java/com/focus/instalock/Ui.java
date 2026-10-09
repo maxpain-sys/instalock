@@ -13,7 +13,6 @@ import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/** Design tokens + small view helpers. One accent, warm neutrals, no gimmicks. */
 final class Ui {
     static final int BG = 0xFF0D0D0C;
     static final int SURFACE = 0xFF161615;
@@ -70,7 +69,6 @@ final class Ui {
         return t;
     }
 
-    /** Small uppercase section label. */
     static TextView label(Context c, String s) {
         TextView t = text(c, s.toUpperCase(), 11, MUTED, medium());
         t.setLetterSpacing(0.14f);

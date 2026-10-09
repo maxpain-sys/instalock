@@ -17,7 +17,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            // Signed with the local debug key so the APK installs directly.
             signingConfig signingConfigs.debug
         }
     }

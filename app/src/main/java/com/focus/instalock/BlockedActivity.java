@@ -15,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/** Shown whenever something blocked is opened. */
 public class BlockedActivity extends Activity {
     public static final String EXTRA_MESSAGE = "msg";
 

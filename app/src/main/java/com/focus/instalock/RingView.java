@@ -6,7 +6,6 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
 
-/** Watch-face style progress ring: 60 ticks + a thin progress arc. */
 public class RingView extends View {
     private final Paint track = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint arc = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -31,7 +30,6 @@ public class RingView extends View {
         tickMajor.setColor(Ui.FAINT);
     }
 
-    /** 0..1 elapsed fraction. */
     public void setProgress(float p) {
         progress = Math.max(0f, Math.min(1f, p));
         invalidate();
@@ -49,7 +47,6 @@ public class RingView extends View {
         canvas.drawArc(oval, 0, 360, false, track);
         if (progress > 0f) canvas.drawArc(oval, -90, 360f * progress, false, arc);
 
-        // ticks
         float outer = r - Ui.dp(getContext(), 14);
         for (int i = 0; i < 60; i++) {
             boolean major = i % 5 == 0;
